@@ -14,13 +14,13 @@ int average=0,average2=0,average3=0;
 SoftwareSerial BTSerial(TxPin, RxPin); 
 void setup() {
   // put your setup code here, to run once:
-  pinMode(A0,INPUT); // ¿ŞÂÊ »ç¿îµå¼¾¼­
-  pinMode(A1,INPUT); // Áß¾Ó
-  pinMode(A2,INPUT); // ¿À¸¥ÂÊ
+  pinMode(A0,INPUT); // ì™¼ìª½ ì‚¬ìš´ë“œì„¼ì„œ
+  pinMode(A1,INPUT); // ì¤‘ì•™
+  pinMode(A2,INPUT); // ì˜¤ë¥¸ìª½
   
-  pinMode(leftPin,OUTPUT); // ¿ŞÂÊ led
-  pinMode(middlePin,OUTPUT); // Áß¾Ó led
-  pinMode(rightPin,OUTPUT); // ¿À¸¥ÂÊ led
+  pinMode(leftPin,OUTPUT); // ì™¼ìª½ led
+  pinMode(middlePin,OUTPUT); // ì¤‘ì•™ led
+  pinMode(rightPin,OUTPUT); // ì˜¤ë¥¸ìª½ led
     BTSerial.begin(9600);
   Serial.begin(9600);
 
@@ -59,15 +59,15 @@ Serial.println(average);
 Serial.println(average2);
 Serial.println(average3);
 if(average>average2){
-  if(average>average3){   //¿ŞÂÊ¿¡¼­ ¼Ò¸®°¡ °¡Àå Å¬ ¶§
+  if(average>average3){   //ì™¼ìª½ì—ì„œ ì†Œë¦¬ê°€ ê°€ì¥ í´ ë•Œ
     if(average>70){
       analogWrite(leftPin,HIGH); BTSerial.println("a");delay(100);}
   }
-  else if(average<average3){ //¿À¸¥ÂÊ¿¡¼­ ¼Ò¸®°¡ °¡Àå Å¬ ¶§
+  else if(average<average3){ //ì˜¤ë¥¸ìª½ì—ì„œ ì†Œë¦¬ê°€ ê°€ì¥ í´ ë•Œ
     if(average3>70){
       analogWrite(rightPin,HIGH); BTSerial.println("c");delay(100);}
   }
-  else{   // ¿ŞÂÊ, ¿À¸¥ÂÊ »ç¿îµå ¼¾¼­°¡ °°Àº °ªÀ» ¹ŞÀ» ¶§ -> ¾Õ¿¡¼­ ¼Ò¸®?
+  else{   // ì™¼ìª½, ì˜¤ë¥¸ìª½ ì‚¬ìš´ë“œ ì„¼ì„œê°€ ê°™ì€ ê°’ì„ ë°›ì„ ë•Œ -> ì•ì—ì„œ ì†Œë¦¬?
     if(average>70){
     analogWrite(leftPin,HIGH);
     analogWrite(rightPin,HIGH);
@@ -75,15 +75,15 @@ if(average>average2){
   }
 }
 else if(average<average2){
-  if(average2>average3){ // Áß¾Ó¿¡¼­ °¡Àå ¼Ò¸®°¡ Å¬ ¶§
+  if(average2>average3){ // ì¤‘ì•™ì—ì„œ ê°€ì¥ ì†Œë¦¬ê°€ í´ ë•Œ
     if(average2>70){
     analogWrite(middlePin,HIGH); BTSerial.println("b");delay(100);}
   }
-  else if(average2<average3){ // ¿À¸¥ÂÊ
+  else if(average2<average3){ // ì˜¤ë¥¸ìª½
     if(average3>70){
     analogWrite(rightPin,HIGH); BTSerial.println("c");delay(100);}
   }
-  else{   // Áß¾Ó, ¿À¸¥ÂÊ¿¡¼­ °°ÀÌ ¼Ò¸®
+  else{   // ì¤‘ì•™, ì˜¤ë¥¸ìª½ì—ì„œ ê°™ì´ ì†Œë¦¬
     if(average3>70){
     analogWrite(rightPin,HIGH);
     analogWrite(middlePin,HIGH);delay(100);}
@@ -91,7 +91,7 @@ else if(average<average2){
 }
 else{
   if(average>70){
-  if(average == average3) { // 3¹æÇâ¿¡¼­ ¸ğµÎ °°Àº ¼Ò¸®?
+  if(average == average3) { // 3ë°©í–¥ì—ì„œ ëª¨ë‘ ê°™ì€ ì†Œë¦¬?
     analogWrite(leftPin,HIGH);
     analogWrite(middlePin,HIGH);
     analogWrite(rightPin,HIGH);BTSerial.println("e");delay(100);
