@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:id="@+id/layout"
+
+    tools:context="com.example.geonsu.neckband.MainActivity">
+
+    <TextView
+        android:id="@+id/txtArduino"
+        android:layout_width="293dp"
+        android:layout_height="30dp"
+        android:text="Sound Localization Visualization"
+        android:textSize="20dp"
+        />
+
+    <EditText
+
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/typeArea"
+        android:layout_below="@+id/txtArduino"
+       />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send"
+        android:id="@+id/btn1"
+        android:layout_above="@+id/btn2"
+    android:layout_centerHorizontal="true" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="button2"
+        android:id="@+id/btn2"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/btn1"
+        android:layout_alignStart="@+id/btn1" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="button3"
+        android:id="@+id/btn3"
+        android:layout_below="@+id/btn2"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="button4"
+        android:id="@+id/btn4"
+        android:layout_below="@+id/btn3"
+        android:layout_alignLeft="@+id/btn3"
+        android:layout_alignStart="@+id/btn3" />
+</RelativeLayout>
